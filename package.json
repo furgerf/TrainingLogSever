@@ -19,6 +19,7 @@
   },
   "homepage": "https://github.com/furgerf/TrainingLogSever",
   "dependencies": {
+    "mongodb": "*",
     "request": "*",
     "restify": "*"
   },

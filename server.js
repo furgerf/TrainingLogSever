@@ -8,6 +8,7 @@
 // required modules
 var restify = require('restify'),
     config = require('./config.json'),
+    mongo = require('mongodb').MongoClient,
 /*
 // files for each of the api routes
     getAccount = require('./src/account/getAccount.js'),
@@ -37,6 +38,32 @@ server.use(restify.queryParser());
 // start server
 server.listen(config.api.port, function () {
     console.log('Training Log API running on port ' + config.api.port);
+
+    mongo.connect("mongodb://localhost:27017/book", function (err, db) {
+      if (err) {
+        console.log("Error: " + err);
+        process.exit();
+      }
+
+      var collection = db.collection('test');
+      var docs = [{mykey:1}, {mykey:2}, {mykey:3}];
+
+      collection.insert(docs, {w:1}, function(err, result) {
+        // ASYNCHRONOUS!
+
+        collection.find().toArray(function(err, items) {});
+
+        var stream = collection.find({mykey:{$ne:2}}).stream();
+        stream.on("data", function(item) {
+          console.log(item);
+        });
+        stream.on("end", function() {});
+
+        collection.findOne({mykey:1}, function(err, item) {});
+      });
+
+      console.log("Mongo connection successful!");
+    });
 
     /*
     // Account
