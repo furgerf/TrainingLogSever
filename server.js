@@ -10,7 +10,7 @@ var restify = require('restify'),
     config = require('./config.json'),
 
     // files for each of the api routes
-    prototype = require('./src/prototype.js'),
+    //prototype = require('./src/prototype.js'),
 
     // server
     server = restify.createServer();
@@ -24,7 +24,7 @@ server.use(restify.queryParser());
 server.listen(config.api.port, function () {
   console.log('Training Log API running on port ' + config.api.port);
 
-  server.get(/^\/prototype\/?$/, prototype.prototype);
+  //server.get(/^\/prototype\/?$/, prototype.prototype);
 
   // Shutdown
   server.get(/^\/exit$/, process.exit);
