@@ -20,10 +20,11 @@
   "homepage": "https://github.com/furgerf/TrainingLogSever",
   "dependencies": {
     "request": "*",
-    "restify": "*",
-    "mongoose": "*",
-    "expect.js": "*"
+    "restify": "*"
   },
   "devDependencies": {
+    "mongoose": "*",
+    "expect.js": "*",
+    "istanbul": "*"
   }
 }
