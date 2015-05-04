@@ -21,7 +21,9 @@
   "dependencies": {
     "mongodb": "*",
     "request": "*",
-    "restify": "*"
+    "restify": "*",
+    "mongoose": "*",
+    "expect.js": "*"
   },
   "devDependencies": {
   }
