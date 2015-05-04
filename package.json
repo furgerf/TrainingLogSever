@@ -1,7 +1,7 @@
 {
   "name": "training-log",
   "version": "0.0.1",
-  "description": "Server for training data",
+  "description": "Server for Keeping a Training Log",
   "main": "server.js",
   "scripts": {
     "start": "supervisor server.js",
@@ -19,7 +19,6 @@
   },
   "homepage": "https://github.com/furgerf/TrainingLogSever",
   "dependencies": {
-    "mongodb": "*",
     "request": "*",
     "restify": "*",
     "mongoose": "*",
