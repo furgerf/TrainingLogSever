@@ -6,7 +6,7 @@
   "scripts": {
     "start": "supervisor server.js",
     "stop": "pkill node",
-    "test": "mocha"
+    "test": "mocha --colors --growl --reporter list --check-leaks --full-trace"
   },
   "repository": {
     "type": "git",
